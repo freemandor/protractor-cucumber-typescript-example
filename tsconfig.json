@@ -1,0 +1,20 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+      "baseUrl": ".",
+      "module": "commonjs",
+      "paths": { "*": ["types/*"] },
+      "outDir": "./dist/out-tsc",
+      "mapRoot": "./dist/out-tsc/",
+      "sourceMap": true,
+      "declaration": false,
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "target": "es6",
+      "typeRoots": [
+        "node_modules/@types"
+      ]
+    }
+   }
