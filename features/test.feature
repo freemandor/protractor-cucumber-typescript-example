@@ -7,7 +7,7 @@ Feature: As a user I would like to start a job and make sure it runs properlly
 
   Scenario: As a user, I want to verify that a runnig a job works
     Given I send a request to get employees
-    And I send a request to create employe
+    And I send a request to create employee
         | name   | test |
         | salary | 123  |
         | age    | 23   |
@@ -18,4 +18,3 @@ Feature: As a user I would like to start a job and make sure it runs properlly
         
 
     
-   
