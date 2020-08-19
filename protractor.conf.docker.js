@@ -6,6 +6,7 @@ exports.config = {
     specs: [
         'features/**/*.feature'
     ],
+    seleniumAddress: "http://localhost:4444/wd/hub",
 
     // Use this to exclude files from the test run.
     // In this case it's empty since we want all files
@@ -19,11 +20,10 @@ exports.config = {
 
     // Contains additional settings for cucumber-js
     cucumberOpts: {
-        require: ['step_definitions/**/*.ts'],
-        compiler: 'ts:ts-node/register',
+        require: ['step_definitions/**/*.js'],
         format: ["node_modules/cucumber-pretty", "json:reports/results.json"],
         strict: true,
-        tags: '@Web',
+        tags: '@Web'
     },
 
     // These capabilities tell protractor about the browser
@@ -39,11 +39,6 @@ exports.config = {
     // This setting tells protractor to wait for all apps
     // to load on the page instead of just the first.
     useAllAngular2AppRoots: true,
-    beforeLaunch: function() {
-        require('ts-node').register({
-        project: 'tsconfig.json'
-        });
-    },
 
     onPrepare: () => {
         let globals = require("protractor");

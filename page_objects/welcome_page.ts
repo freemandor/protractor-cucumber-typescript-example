@@ -12,7 +12,6 @@ export class WelcomePage extends BasePage {
     public async navigate(): Promise<WelcomePage> {
         await browser.get('https://codefresh.io/')
 
-
         return new WelcomePage()
     }
 
