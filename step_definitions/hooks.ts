@@ -10,11 +10,15 @@ class Hooks extends BaseSteps {
     protected world!: World
     constructor(world: World)
     {super(world) }
+
+    @before()
+    public async beforeAllScenariosRequiring(): Promise<void> {
+        await setDefaultTimeout(30 * 1000)
+    }
     
     @before('@Web')
     public async beforeAllScenariosRequiringWeb(): Promise<void> {
-             
-        setDefaultTimeout(30 * 1000)
+        await browser.driver.manage().window().maximize()
         await browser.waitForAngularEnabled(false)
         this.world.welcomePage = await new WelcomePage().navigate()
     }
